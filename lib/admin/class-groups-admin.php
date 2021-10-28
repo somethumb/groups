@@ -161,7 +161,7 @@ class Groups_Admin {
 			GROUPS_ADMINISTER_GROUPS,
 			'groups-admin',
 			apply_filters( 'groups_add_menu_page_function', 'groups_admin_groups' ),
-			GROUPS_PLUGIN_URL . '/images/groups.png',
+			'data:image/svg+xml;base64,' . base64_encode(file_get_contents(GROUPS_PLUGIN_URL.'images/groups.svg')),
 			self::MENU_POSITION
 		);
 		$pages[] = $page;
@@ -247,7 +247,7 @@ class Groups_Admin {
 			GROUPS_ADMINISTER_GROUPS,
 			'groups-network-admin',
 			apply_filters( 'groups_add_menu_page_function', 'groups_network_admin_options' ),
-			GROUPS_PLUGIN_URL . '/images/groups.png'
+			'data:image/svg+xml;base64,' . base64_encode(file_get_contents(GROUPS_PLUGIN_URL.'images/groups.svg'))
 		);
 		$pages[] = $page;
 		add_action( 'admin_print_styles-' . $page, array( __CLASS__, 'admin_print_styles' ) );
